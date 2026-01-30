@@ -74,6 +74,7 @@
         <p>Invoice: <strong>{{ $transaction->invoice_code }}</strong></p>
         <p>Date: {{ $transaction->created_at->format('d M Y H:i') }}</p>
         <p>Status: {{ ucfirst($transaction->status) }}</p>
+        <p>Payment: {{ strtoupper($transaction->payment_method ?? 'CASH') }}</p>
     </div>
 
     <table>

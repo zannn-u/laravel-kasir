@@ -155,6 +155,27 @@
                 </div>
             @endif
 
+            <!-- Payment Method Selection -->
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Payment Method</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="cursor-pointer">
+                        <input type="radio" wire:model.live="paymentMethod" value="cash" class="peer sr-only">
+                        <div
+                            class="text-center p-2 rounded-lg border border-gray-200 bg-white peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            <span class="text-sm font-semibold">Cash</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="radio" wire:model.live="paymentMethod" value="qris" class="peer sr-only">
+                        <div
+                            class="text-center p-2 rounded-lg border border-gray-200 bg-white peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            <span class="text-sm font-semibold">QRIS</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
             <div class="flex justify-between items-center mb-4">
                 <span class="text-gray-600">Subtotal</span>
                 <span class="text-xl font-bold text-gray-900">Rp {{ number_format($this->total, 0, ',', '.') }}</span>

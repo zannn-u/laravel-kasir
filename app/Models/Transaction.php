@@ -10,13 +10,7 @@ class Transaction extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'invoice_code',
-        'total_amount',
-        'cash_received',
-        'change_amount',
-        'status',
-    ];
+    protected $fillable = ['invoice_code', 'total_amount', 'cash_received', 'change_amount', 'payment_method', 'status'];
 
     protected $casts = [
         'total_amount' => 'decimal:2',

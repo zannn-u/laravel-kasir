@@ -19,6 +19,7 @@ class PosPage extends Component
     public $otp_search = '';
     public $selectedCategory = null;
     public $cart = [];
+    public $paymentMethod = 'cash'; // Default 'cash'
 
     // Calculated properties
     public function getTotalProperty()
@@ -114,6 +115,7 @@ class PosPage extends Component
             'total_amount' => $this->total,
             'cash_received' => $this->total, // Auto-pay for now, or add modal later
             'change_amount' => 0,
+            'payment_method' => $this->paymentMethod,
             'status' => 'completed',
         ]);
 
