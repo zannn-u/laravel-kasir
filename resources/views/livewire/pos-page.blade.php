@@ -3,7 +3,13 @@
     <div class="w-2/3 flex flex-col h-full">
         <!-- Header -->
         <div class="p-4 bg-white shadow-sm flex items-center justify-between z-10">
-            <h1 class="text-xl font-bold text-gray-800">POS System</h1>
+            <div class="flex items-center space-x-4">
+                <h1 class="text-xl font-bold text-gray-800">POS System</h1>
+                <a href="{{ route('report.index') }}"
+                    class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded-full transition-colors font-medium">
+                    Sales Report
+                </a>
+            </div>
             <div class="relative w-1/2">
                 <input wire:model.live.debounce.300ms="search" type="text"
                     placeholder="Search product (Name, SKU, Barcode)..."
@@ -57,7 +63,8 @@
                         </div>
                         <div class="p-3">
                             <h3 class="font-semibold text-gray-800 truncate" title="{{ $product->name }}">
-                                {{ $product->name }}</h3>
+                                {{ $product->name }}
+                            </h3>
                             <p class="text-xs text-gray-500 mb-2">{{ $product->category->name }}</p>
                             <div class="flex items-center justify-between">
                                 <span class="font-bold text-blue-600">Rp

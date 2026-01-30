@@ -130,7 +130,11 @@ class PosPage extends Component
         }
 
         $this->clearCart();
-        session()->flash('success', 'Transaction successful! Invoice: ' . $transaction->invoice_code);
+
+        // session()->flash('success', 'Transaction successful! Invoice: ' . $transaction->invoice_code);
+
+        // Redirect to invoice print
+        return redirect()->route('invoice.print', ['invoiceCode' => $transaction->invoice_code]);
     }
 
     public function render()
